@@ -1,9 +1,8 @@
 <html>
   <head>
     <title>Header Bidding - Prebid.js - Test</title>
-    <-- Add the header bidding wrapper here -->
     <script> 
-      var PREBID_TIMEOUT = 1000; // milliseconds
+      var PREBID_TIMEOUT = 1000; // auction timeout, in milliseconds
       var MAX_RETRIES = 20;
       
       var pbjs = pbjs || {};
@@ -47,7 +46,7 @@
           target.insertBefore(pbs, target.firstChild);
       })();
       
-      // load GPT (DFP) library 
+      // load GPT (DFP) library asynchronously
       (function () {
           var gads = document.createElement('script');
           // gads.async = true;
@@ -59,7 +58,7 @@
           node.parentNode.insertBefore(gads, node);
       })();
       
-      // configure Prebid wrappper - enqueue an anonymous function to be executed once it is loaded
+      // configure Prebid wrappper - enqueue an anonymous setup function to be executed once it is loaded
       pbjs.que.push(function() {
       
         // set bid granularity (rounding of bids down to 10c intervals from $0 to $20)
