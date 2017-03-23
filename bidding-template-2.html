@@ -1,6 +1,7 @@
-<html>
-  <head>
-    <title>Header Bidding - Prebid.js - Test</title>
+    <!--
+      THIS IS THE WRAPPER AND DFP SETUP CODE
+      Paste it into the header of your bidding test page
+    -->
     <script> 
       var PREBID_TIMEOUT = 2000; // auction timeout, in milliseconds. Normally 750-1500ms
       var MAX_RETRIES = 20;
@@ -71,7 +72,10 @@
         };
         pbjs.setPriceGranularity(customGranularity);
 
-        // TODO: tell the wrapper about your specific inventory on this page
+        /*
+          TODO: tell the wrapper about your specific inventory on this page,
+          from https://github.com/barneytest/barneytest.github.io/master/bidding-template-3.html
+        */
 
         // kick off the auction
         pbjs.requestBids({
@@ -118,12 +122,8 @@
         };	
       });
 
-      // TODO: tell DFP about the inventory you have on the page
+      /*
+        TODO: tell the wrapper about your specific inventory on this page,
+        from https://github.com/barneytest/barneytest.github.io/master/bidding-template-3.html
+      */
     </script>
-  </head>
-  <body>
-    <h2>Header Bidding Test with Prebid.js</h2>
-    <h5>Div-1</h5>
-    <!-- Add the DFP tag here -->
-  </body>
-</html>
